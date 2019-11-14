@@ -1,3 +1,14 @@
+
+//############### Data analyse ##################/*
+
+
+
+//"""""""""""" bibliotek """"""""""/*
+
+
+
+console.log('----------------------------------------------------------)')
+
 const books = [
     { title: 'Gatsby le magnifique', id: 133712, rented: 39 },
     { title: 'A la recherche du temps,perdu', id: 237634, rented: 28 },
@@ -16,25 +27,23 @@ const books = [
 
 
 // Est-ce que tous les livres ont été au moins empruntés une fois ?
+
 console.log('Livre(s) ont été au moins empruntés une fois')
 for(let index in books) {
     (books[index]['rented']>1) ? console.log(books[index]['title'] + " empruntés plus d'une fois "):console.log('jamais empruntés ou une fois');
 }
 console.log('---------------------------');
 
-// //Quel est livre le plus emprunté ?
-// let moreRead = "";
-// let prêt = 0;
-// // Je recherche par tri du nb de rented
-// console.log("Quel est livre le plus emprunté ?");
-// books.forEach(book => {
-//     if (book.rented > prêt) {
-//        prêt  = book.rented;
-//         moreRead = book.title;
-//     }
-//   });
-// console.log(moreRead);
-// console.log('---------------------------');
+
+
+
+// Quel est le livre le plus emprunté ?
+let booksRt = books.sort(function (a, b) {
+  return a.rented - b.rented;
+});
+console.log("Quel est livre le plus emprunté ?")
+console.log(booksRt[11].title)
+console.log('---------------------------');
 
 // Quel est le livre le moins emprunté ?
 let booksRented = books.sort(function (a, b) {
@@ -44,17 +53,9 @@ let booksRented = books.sort(function (a, b) {
   console.log(booksRented[0].title)
   console.log('---------------------------');
 
-// Quel est le livre le moins emprunté ?
-let booksRt = books.sort(function (a, b) {
-  return a.rented - b.rented;
-});
-console.log("Quel est livre le plus emprunté ?")
-console.log(booksRt[11].title)
-console.log('---------------------------');
-
 // Trouve le livre avec l'ID: 873495 
 let findBook = books.find(item => item.id == 873495);
-console.log("Le livre avec l'ID: 873495 est :" + findBook.title);
+console.log("Le livre avec l'ID: 873495 est :  --" + findBook.title);
 console.log('---------------------------');
 
 // Supprime le livre avec l'ID: 133712 ;

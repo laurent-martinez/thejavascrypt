@@ -1,4 +1,4 @@
-//######### Analyse de données #########/*
+//######### Data analyse #########/*
 
 //####### Startup Nation ########/*
 
@@ -27,7 +27,7 @@ const entrepreneurs = [
   console.log('--------------------- Boss seventies');
   let someBoss = entrepreneurs.filter(entrepreneur => (entrepreneur.year > 1969 && entrepreneur.year < 1980));
   for(let index in someBoss) {
-      console.log(someBoss[index].first + " " + someBoss[index].last);
+      console.log("==="+someBoss[index].first + "--" + someBoss[index].last);
   }
   console.log('--------------------- ');
 
@@ -35,7 +35,7 @@ const entrepreneurs = [
   console.log('--------------------- Array avec prénom et nom des boss');
   let identify = [];
   for(let index in entrepreneurs) {
-    let temp = entrepreneurs[index].first + " " + entrepreneurs[index].last;
+    let temp = "=="+entrepreneurs[index].first + "--" + entrepreneurs[index].last;
     identify.push(temp);
     console.log(identify[index]);
   }
@@ -48,7 +48,7 @@ const entrepreneurs = [
   for(let index in entrepreneurs){
       let âge = 2019 - entrepreneurs[index].year
       let temp = entrepreneurs[index].first + " " + entrepreneurs[index].last;
-    kelage.push(temp+" --"+âge+"--");
+    kelage.push("=="+temp+" --"+âge+"--");
     console.log(kelage[index]);
   }
   console.log('--------------------- ');
@@ -58,17 +58,16 @@ const entrepreneurs = [
    //je créé un array avec nom et préom pour trier
    let lastNameBoss = [];
    for(let index in entrepreneurs) {
-     let tmp = entrepreneurs[index].last + " " + entrepreneurs[index].first;
+     let tmp ="=="+ entrepreneurs[index].last + ' ' + entrepreneurs[index].first;
      lastNameBoss.push(tmp);
   }
   // je trie avec .sort()
   lastNameBoss.sort();
   let name = [];
   for(let index in lastNameBoss) {
-     // affiche prénom nom
      name = lastNameBoss[index].split(' ');
-     //console.log(lastNameBoss[index]);
-     console.log(name[0] + " " + name[1]);
+    
+     console.log("=="+name[0]+"--" + name[1]);
   }
   console.log('--------------------- terminé pour ce script');
 
